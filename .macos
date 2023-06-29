@@ -1,0 +1,88 @@
+#!/bin/zsh
+
+#print settings with 'defaults read'
+
+# close any system preference windows first
+osascript -e 'tell application "System Preferences" to quit'
+
+# become root
+sudo -v
+
+# stay root
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+####################################
+# System
+
+# Disable the sound effects on boot
+# sudo nvram SystemAudioVolume=" "
+
+# Enable Firewall
+sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
+
+
+####################################
+# Trackpad, keyboard
+
+## macOS Ventura
+defaults write "Apple Global Domain" ContextMenuGesture -int 1
+
+# Trackpad: enable tap to click for this user and for the login screen
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -int 1
+## macOS Ventura
+defaults write com.apple.AppleMultitouchTrackpad Clicking -int 1
+
+# use keyboard navigation to move focus between controls (tab-tab for everything)
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+# Non-breaking spaces: 
+https://superuser.com/questions/78245/how-to-disable-the-option-space-key-combination-for-non-breaking-spaces
+#mkdir -p ~/Library/KeyBindings
+#cat > ~/Library/KeyBindings/DefaultKeyBinding.dict <<EOF
+#{
+#"~ " = ("insertText:", " ");
+#}
+#EOF
+
+####################################
+## Sound
+defaults write "Apple Global Domain" com.apple.sound.uiaudio.enabled -int 0
+
+####################################
+## Menu widgets
+
+## Clock with seconds
+defaults write "Apple Global Domain" com.apple.menuextra.clock.Show24Hour -int 0
+defaults write "Apple Global Domain" com.apple.menuextra.clock.ShowAMPM -int 1
+defaults write "Apple Global Domain" com.apple.menuextra.clock.ShowSeconds -int 1
+
+
+
+####################################
+# Screen
+
+# Require password immediately after sleep or screen saver begins
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+
+####################################
+# Locations
+
+# Screenshot location
+test -d "${HOME}/Pictures/screenshots" || mkdir -p "${HOME}/Pictures/screenshots"
+defaults write com.apple.screencapture location -string "${HOME}/Pictures/screenshots"
+
+# Save screenshots in PNG format (other options: BMP, GIF, JPG, PDF, TIFF)
+defaults write com.apple.screencapture type -string "png"
+
+# Show the ~/Library folder
+chflags nohidden ~/Library
+
+# Show the /Volumes folder
+sudo chflags nohidden /Volumes
+
+####################################
+
+echo "Applied settings. System reboot required""
+
