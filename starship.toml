@@ -1,0 +1,104 @@
+format = """
+[ ](bold blue)\
+$username\
+[→ ]($style_user)\
+$directory\
+[→ ]($read_only_style)\
+$git_branch\
+$c\
+$elixir\
+$elm\
+$golang\
+$python\
+$haskell\
+$java\
+$julia\
+$nodejs\
+$nim\
+"""
+
+[os]
+format = "on [($name )]($style)"
+style = "bold blue"
+disabled = false
+
+[os.symbols]
+Macos = "  "
+Fedora = " "
+Ubuntu = " "
+Unknown = " "
+Windows = "󰍲 "
+
+#Packages
+
+[nodejs]
+symbol = " "
+
+[python]
+symbol = " "
+
+#show username
+[username]
+style_user = 'white bold'
+style_root = 'black bold'
+format = 'user:[$user]($style) '
+disabled = false
+show_always = true
+
+#show current directory
+[directory]
+truncation_length = 5
+truncation_symbol = '…/'
+home_symbol = '󰋜'
+read_only_style = 'red'
+read_only = '  '
+format = 'at [$path]($style)[$read_only]($read_only_style) '
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+#show hostname
+[hostname]
+ssh_only = false
+format = '[$ssh_symbol](bold blue) on [$hostname](bold red) '
+disabled = false
+
+
+#shows current git branch
+[git_branch]
+symbol = ' '
+format = 'via [$branch]($style)'
+truncation_length = 4
+truncation_symbol = '…/'
+style = 'bold green'
+
+#shows current git status
+[git_status]
+format = '[$all_status$ahead_behind]($style) '
+style = 'bold green'
+conflicted = '🏳'
+up_to_date = ''
+untracked = ' '
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+stashed = ' '
+modified = ' '
+staged = '[++\($count\)](green)'
+renamed = '襁 '
+deleted = ' '
+
+
+[sudo]
+style = 'bold green'
+symbol = '👩‍💻 '
+disabled = false
+
+[memory_usage]
+disabled = false
+threshold = -1
+symbol = ' '
+style = 'bold dimmed green'
