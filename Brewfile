@@ -13,11 +13,10 @@ tap "anchore/grype"
 
 # Apps
 cask "firefox"
-cask "maccy"
 cask "raycast"
 cask "vlc"
 cask "visual-studio-code"
-cask "discord"
+cask "slack"
 
 # Install ZSH
 brew "zsh-completions"
