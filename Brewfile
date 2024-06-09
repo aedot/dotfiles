@@ -17,6 +17,7 @@ cask "raycast"
 cask "vlc"
 cask "visual-studio-code"
 cask "slack"
+cask "starship"
 
 # Install ZSH
 brew "zsh-completions"
