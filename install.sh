@@ -23,7 +23,7 @@ mkdir $HOME/Sites
 # This is an default directory for OS X user accounts but doesn't comes pre-installed
 mkdir $HOME/.warp/themes
 
-cp coolnight.yaml $HOME/.warp/themes/
+cp ~/.dotfiles/coolnight.yaml $HOME/.warp/themes/
 
 # Set OS X preferences
 # We will run this last because this will reload the shell
