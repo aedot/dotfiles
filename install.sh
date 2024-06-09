@@ -19,6 +19,12 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # This is an default directory for OS X user accounts but doesn't comes pre-installed
 mkdir $HOME/Sites
 
+# Create a warp terminal directory
+# This is an default directory for OS X user accounts but doesn't comes pre-installed
+mkdir $HOME/.warp/themes
+
+cp coolnight.yaml $HOME/.warp/themes/
+
 # Set OS X preferences
 # We will run this last because this will reload the shell
 source .macos
