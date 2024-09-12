@@ -108,6 +108,14 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Ansible alias
+alias ap="ansible-playbook"
+alias av="ansible-vault"
+
+# K8s alias
+alias k="kubectl"
+alias h="helm"
+
 # Syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
