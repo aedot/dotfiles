@@ -5,18 +5,22 @@ Follow these install instructions to setup a new Mac.
 1. Update OS X to the latest version with the App Store
 2. Install Xcode from the App Store, open it and accept the license agreement
 3. Install OS X Command Line Tools
-4. Copy public and private SSH keys to `~/.ssh` and make sure they're set to `600`
-5. Clone this repo to `~/.dotfiles`
-6. Append `/usr/local/bin/zsh` to the end of your `/etc/shells` file
-7. Run `install.sh` to start the installation
-8. Make sure Dropbox is set up and synced
-9. [Install the remaining apps](./apps.md)
-10. Restore preferences by running `mackup restore`
-11. Restart your computer to finalize the process
+4. Generate and copy SSH keys to github `ssh-keygen -t ed25519 -C "your_email@example.com"`
+5. Ensure SSH agent is running `eval "$(ssh-agent -s)"`
+6. Test SSH connection `ssh -T git@github.com`
+7. Verify SSH key is on system `ssh-add -l`
+8. If SSH key is not found, add `ssh-add ~/.ssh/sshkey_id`
+9. Clone this repo to `~/.dotfiles`
+10. Append `/usr/local/bin/zsh` to the end of your `/etc/shells` file
+11. Make script executable `chmod +x install.sh`
+12. Run `install.sh` to start the installation
+13. [Install the remaining apps](./apps.md)
+14. Restore preferences by running `mackup restore`
+15. Restart your computer to finalize the process
 
 Your Mac is now ready to use!
 
-Check out the [`Brewfile`](./Brewfile) and adjust the apps you want to install for your machine. Use [their search page](https://caskroom.github.io/search) to check if the app you want to install is available.
+Check out the [`Brewfile`](./Brewfile) and adjust the apps you want to install for your machine. Use [their search page](hhttps://formulae.brew.sh/cask/) to check if the app you want to install is available.
 
 One thing you'll need to do manually is add your `~/.zshrc` file. You can't symlink the `.zshrc` file from your dotfiles because Mackup will already symlink your `.zshrc` from your home directory. That's why we'll need to create the file manually. Add the contents below to a `.zshrc` file in your user directory. What it will do is load the `.zshrc` file from your dotfiles. Make sure that the path to your dotfiles is correct.
 

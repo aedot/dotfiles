@@ -18,6 +18,7 @@ cask "vlc"
 cask "visual-studio-code"
 cask "slack"
 cask "starship"
+cask "warp"
 
 # Install ZSH
 brew "zsh-completions"
