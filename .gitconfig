@@ -1,6 +1,6 @@
 [user]
 	name = aedot
-	email = dragonenergy.hack@gmail.com
+	email = github@xttmcore.com
 	signingkey = /Users/aedot/.ssh/id_GIT
 [alias]
         l  = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --
