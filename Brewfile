@@ -13,16 +13,14 @@ tap "anchore/grype"
 
 # Apps
 cask "firefox"
-cask "raycast"
 cask "vlc"
 cask "visual-studio-code"
 cask "slack"
 cask "starship"
 cask "warp"
 
-# Install ZSH
-brew "zsh-completions"
-brew "zsh-syntax-highlighting"
+# Install FISH
+brew "fish"
 
 # Install Binaries
 brew "mas"

@@ -12,18 +12,18 @@ brew update
 brew tap homebrew/bundle
 brew bundle
 
-## oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Create a Sites directory
 # This is an default directory for OS X user accounts but doesn't comes pre-installed
 mkdir $HOME/Sites
 
-# Create a warp terminal directory
-# This is an default directory for OS X user accounts but doesn't comes pre-installed
-mkdir $HOME/.warp/themes
+# Create FISH directory
+mkdir $HOME/.config/fish
 
-cp ~/.dotfiles/coolnight.yaml $HOME/.warp/themes/
+cp ~/.dotfiles/config.fish $HOME/.config/fish/config.fish
+
+# Copy starfish toml to FISH
+cp ~/.dotfiles/starship.toml $HOME/.config/starship.toml
 
 # Set OS X preferences
 # We will run this last because this will reload the shell
