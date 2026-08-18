@@ -1,0 +1,4 @@
+[tools]
+{{- range $tool, $version := merge (deepCopy .mise.common) (index .mise .machine) }}
+{{ $tool | quote }} = {{ $version | quote }}
+{{- end }}

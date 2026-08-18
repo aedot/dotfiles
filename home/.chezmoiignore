@@ -1,0 +1,18 @@
+# Per-machine selection. This is the single place that decides what exists or
+# runs on each machine; the content files and scripts themselves stay free of
+# machine conditionals. Entries are removed from the target on matching machines.
+
+{{- /* darwin gets Homebrew and the macOS defaults script. */ -}}
+{{- if ne .machine "darwin" }}
+.config/homebrew
+.config/.macos
+.config/fish/conf.d/10-homebrew.fish
+.chezmoiscripts/brew-bundle.sh
+{{- end }}
+
+{{- /* linux uses mise as its package manager. */ -}}
+{{- if ne .machine "linux" }}
+.config/mise
+.chezmoiscripts/install-mise.sh
+.chezmoiscripts/mise-install.sh
+{{- end }}

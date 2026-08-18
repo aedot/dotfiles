@@ -1,0 +1,82 @@
+---
+# Single declarative source for all packages.
+#   brew.*  -> rendered into ~/.config/homebrew/brewfile on darwin
+#   mise.*  -> rendered into ~/.config/mise/config.toml on linux
+# `common` applies everywhere; a per-machine key is merged on top.
+brew:
+  common:
+    fluxcd/tap: tap
+    bash: brew
+    chezmoi: brew
+    cilium-cli: brew
+    cloudflared: brew
+    coreutils: brew
+    cosign: brew
+    curl: brew
+    direnv: brew
+    docker: brew
+    docker-buildx: brew
+    findutils: brew
+    fish: brew
+    fisher: brew
+    fzf: brew
+    gettext: brew
+    gh: brew
+    git: brew
+    gnu-getopt: brew
+    gnu-indent: brew
+    gnu-sed: brew
+    gnu-tar: brew
+    gnupg: brew
+    go: brew
+    go-task: brew
+    grep: brew
+    helm: brew
+    helmfile: brew
+    htop: brew
+    jq: brew
+    krew: brew
+    kubecolor: brew
+    kubernetes-cli: brew
+    kustomize: brew
+    make: brew
+    mise: brew
+    neovim: brew
+    nmap: brew
+    node: brew
+    openssh: brew
+    pre-commit: brew
+    python: brew
+    starship: brew
+    talosctl: brew
+    virtualenv: brew
+    wget: brew
+    zoxide: brew
+    fluxcd/tap/flux: brew
+    firefox: cask
+    font-jetbrains-mono: cask
+    font-jetbrains-mono-nerd-font: cask
+    ghostty: cask
+    visual-studio-code: cask
+
+mise:
+  common: {}
+  linux:
+    chezmoi: latest
+    direnv: latest
+    fzf: latest
+    gh: latest
+    go: latest
+    helm: latest
+    helmfile: latest
+    jq: latest
+    k9s: latest
+    kubectl: latest
+    kustomize: latest
+    neovim: latest
+    node: latest
+    python: latest
+    starship: latest
+    talosctl: latest
+    yq: latest
+    zoxide: latest

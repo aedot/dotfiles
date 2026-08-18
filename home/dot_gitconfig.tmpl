@@ -1,0 +1,27 @@
+[user]
+  name = {{ .name }}
+  email = {{ .email }}
+[core]
+  autocrlf = input
+  editor = nvim
+  excludesfile = ~/.gitignore_global
+[init]
+  defaultBranch = main
+[merge]
+  ff = only
+  conflictStyle = zdiff3
+[pull]
+  rebase = true
+[fetch]
+  prune = true
+[push]
+  autoSetupRemote = true
+[url "ssh://git@github.com/"]
+  pushInsteadOf = https://github.com/
+# SSH commit signing is available but off by default. To enable, uncomment:
+# [gpg]
+#   format = ssh
+# [user]
+#   signingKey = ~/.ssh/id_ed25519.pub
+# [commit]
+#   gpgsign = true

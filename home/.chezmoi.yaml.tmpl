@@ -1,0 +1,12 @@
+{{- /* machine: the chezmoi OS name (darwin on macOS, linux elsewhere). Set once */ -}}
+{{- /* at init and reused thereafter. Everything else keys off this value. */ -}}
+{{- $machine := .chezmoi.os -}}
+{{- if hasKey . "machine" -}}
+{{-   $machine = .machine -}}
+{{- end -}}
+{{- $name := promptStringOnce . "name" "Git name" "aedot" -}}
+{{- $email := promptStringOnce . "email" "Git email" "46858831+aedot@users.noreply.github.com" -}}
+data:
+  name: {{ $name | quote }}
+  email: {{ $email | quote }}
+  machine: {{ $machine | quote }}

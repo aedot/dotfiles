@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# machine: {{ .machine }}
+# brewfile hash: {{ include "dot_config/homebrew/brewfile.tmpl" | sha256sum }}
+# packages hash: {{ include ".chezmoidata/packages.yaml" | sha256sum }}
+set -euo pipefail
+# Reinstall the brew bundle whenever the brewfile or the package data changes.
+brew bundle --no-upgrade --file="$HOME/.config/homebrew/brewfile"

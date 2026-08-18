@@ -1,0 +1,14 @@
+LogLevel ERROR
+
+Host *
+  AddKeysToAgent yes
+  IdentityAgent SSH_AUTH_SOCK
+  IdentityFile ~/.ssh/id_ed25519
+  IdentityFile ~/.ssh/id_rsa
+  # IgnoreUnknown lets non-macOS ssh skip the UseKeychain line below.
+  IgnoreUnknown UseKeychain
+  UseKeychain yes
+
+Host 192.168.*.* 172.16.*.* 10.*.*.*
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
