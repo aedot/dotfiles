@@ -12,10 +12,22 @@
   conflictStyle = zdiff3
 [pull]
   rebase = true
+[rebase]
+  autostash = true
+[rerere]
+  enabled = true
 [fetch]
   prune = true
 [push]
   autoSetupRemote = true
+[diff]
+  algorithm = histogram
+[branch]
+  sort = -committerdate
+[tag]
+  sort = version:refname
+[column]
+  ui = auto
 [url "ssh://git@github.com/"]
   pushInsteadOf = https://github.com/
 # SSH commit signing is available but off by default. To enable, uncomment:

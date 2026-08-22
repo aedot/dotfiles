@@ -1,0 +1,24 @@
+enter_accept = true
+ctrl_n_shortcuts = true
+
+auto_sync = true
+
+search_mode = "fuzzy"
+filter_mode = "global"
+
+history_filter = [
+    "^\\s",              # any command prefixed with a space
+    "^\\s*(pass|secret)",
+    "^cd",
+    "^chezmoi",
+    "^cm",
+    "^git",
+    "^gst$",
+    "^jj",
+    "^ll",
+    "^ls",
+    "^x$",
+]
+
+[sync]
+records = true

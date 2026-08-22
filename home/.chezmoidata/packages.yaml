@@ -6,6 +6,7 @@
 brew:
   common:
     fluxcd/tap: tap
+    atuin: brew
     bash: brew
     chezmoi: brew
     cilium-cli: brew
@@ -49,6 +50,7 @@ brew:
     python: brew
     starship: brew
     talosctl: brew
+    tmux: brew
     virtualenv: brew
     wget: brew
     zoxide: brew
@@ -62,6 +64,7 @@ brew:
 mise:
   common: {}
   linux:
+    atuin: latest
     chezmoi: latest
     direnv: latest
     fzf: latest
@@ -78,5 +81,6 @@ mise:
     python: latest
     starship: latest
     talosctl: latest
+    tmux: latest
     yq: latest
     zoxide: latest

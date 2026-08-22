@@ -9,6 +9,11 @@ Host *
   IgnoreUnknown UseKeychain
   UseKeychain yes
 
-Host 192.168.*.* 172.16.*.* 10.*.*.*
-  StrictHostKeyChecking no
-  UserKnownHostsFile /dev/null
+# Private LAN ranges (RFC 1918: 192.168/16, 10/8, and the full 172.16/12 block
+# — the last one needs every second octet 16-31 listed, as ssh patterns have no
+# numeric ranges). accept-new trusts a host on first sight but still refuses if a
+# known host's key later changes (real MITM protection, unlike `no`); reimaging a
+# box means clearing its line from ~/.ssh/known_hosts_lan.
+Host 192.168.*.* 10.*.*.* 172.16.*.* 172.17.*.* 172.18.*.* 172.19.*.* 172.20.*.* 172.21.*.* 172.22.*.* 172.23.*.* 172.24.*.* 172.25.*.* 172.26.*.* 172.27.*.* 172.28.*.* 172.29.*.* 172.30.*.* 172.31.*.*
+  StrictHostKeyChecking accept-new
+  UserKnownHostsFile ~/.ssh/known_hosts_lan
