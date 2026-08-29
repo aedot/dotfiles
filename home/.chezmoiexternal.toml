@@ -1,0 +1,8 @@
+# Externals fetched by chezmoi (not tracked in this repo).
+
+# Tmux Plugin Manager. Plugins themselves are installed by tpm into
+# ~/.config/tmux/plugins/ via `prefix + I`; only tpm is managed here.
+[".config/tmux/plugins/tpm"]
+    type = "git-repo"
+    url = "https://github.com/tmux-plugins/tpm.git"
+    refreshPeriod = "168h"
