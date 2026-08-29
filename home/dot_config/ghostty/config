@@ -11,8 +11,8 @@ macos-auto-secure-input = true
 macos-secure-input-indication = true
 
 # window settings
-window-width = 120
-window-height = 45
+window-width = 180
+window-height = 30
 
 window-padding-balance = false
 window-padding-x = 10
